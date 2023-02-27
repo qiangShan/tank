@@ -1,8 +1,10 @@
 package com.mashibing.tank;
 
+import com.mashibing.factory.BaseBullet;
+
 import java.awt.*;
 
-public class Bullet {
+public class Bullet extends BaseBullet {
 
     private static final int SPEED=10;
     public static int WIDTH=ResourceMgr.bulletD.getWidth();
@@ -91,7 +93,7 @@ public class Bullet {
             this.die();
             int eX=tank.getX()+Tank.WIDTH/2-Explode.WIDTH/2;
             int eY=tank.getY()+Tank.HEIGHT/2-Explode.HEIGHT/2;
-            tankFrame.explodes.add(new Explode(eX,eY,tankFrame));
+            tankFrame.explodes.add(tankFrame.gf.createExplode(eX,eY,tankFrame) );
         }
     }
 

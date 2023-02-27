@@ -1,5 +1,6 @@
 package com.mashibing.tank;
 
+import com.mashibing.factory.BaseTank;
 import com.mashibing.strategy.DefaultFireStrategy;
 import com.mashibing.strategy.FireStrategy;
 import com.mashibing.strategy.FourDirFireStrategy;
@@ -7,7 +8,7 @@ import com.mashibing.strategy.FourDirFireStrategy;
 import java.awt.*;
 import java.util.Random;
 
-public class Tank {
+public class Tank extends BaseTank {
 
     public  int x,y;
     public Dir dir=Dir.DOWN;
@@ -80,6 +81,7 @@ public class Tank {
         this.y = y;
     }
 
+    @Override
     public void paint(Graphics graphics){
         if(!living)
             tankFrame.tanks.remove(this);

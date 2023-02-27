@@ -1,9 +1,11 @@
 package com.mashibing.tank;
 
+import com.mashibing.factory.BaseExplode;
+
 import java.awt.*;
 import java.util.Random;
 
-public class Explode {
+public class Explode extends BaseExplode {
     private int x,y;
     public static int WIDTH=ResourceMgr.explodes[0].getWidth();
     public static int HEIGHT=ResourceMgr.explodes[0].getHeight();
@@ -37,6 +39,7 @@ public class Explode {
         this.y = y;
     }
 
+    @Override
     public void paint(Graphics graphics){
         graphics.drawImage(ResourceMgr.explodes[step++],x,y,null);
         if(step>=ResourceMgr.explodes.length){
