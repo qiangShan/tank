@@ -19,8 +19,8 @@ public class Tank extends BaseTank {
     public TankFrame tankFrame=null;
     private boolean living=true;
     private Random random=new Random();
-    public Group group=Group.BAD;
-    Rectangle rectangleTank =new Rectangle();
+
+
     FireStrategy fireStrategy;
 
     public boolean isMoving() {

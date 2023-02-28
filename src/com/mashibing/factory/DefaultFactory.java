@@ -9,7 +9,7 @@ public class DefaultFactory extends GameFactory{
     }
 
     @Override
-    public BaseBullet createBullet(int x, int y, TankFrame tf) {
+    public BaseBullet createBullet(int x, int y, Dir dir, Group group, TankFrame tf) {
         return null;
     }
 

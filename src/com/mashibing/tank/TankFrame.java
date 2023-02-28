@@ -1,9 +1,6 @@
 package com.mashibing.tank;
 
-import com.mashibing.factory.BaseExplode;
-import com.mashibing.factory.DefaultFactory;
-import com.mashibing.factory.GameFactory;
-import com.mashibing.factory.RectFactory;
+import com.mashibing.factory.*;
 
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -19,7 +16,7 @@ public class TankFrame extends Frame {
 
     Tank myTank=new Tank(200,500,Dir.DOWN,Group.GOOD,this);
     public List<Bullet> bullets=new ArrayList<Bullet>();
-    public List<Tank> tanks=new ArrayList<Tank>();
+    public List<BaseTank> tanks=new ArrayList<BaseTank>();
     public static final int GAME_WIDTH=1080,GAME_HEIGHT=960;
     public List<BaseExplode> explodes=new ArrayList<BaseExplode>();
     GameFactory gf=new RectFactory();

@@ -1,6 +1,7 @@
 package com.mashibing.tank;
 
 import com.mashibing.factory.BaseBullet;
+import com.mashibing.factory.BaseTank;
 
 import java.awt.*;
 
@@ -59,6 +60,7 @@ public class Bullet extends BaseBullet {
         move();
     }
 
+
     private void move() {
 
         switch (dir) {
@@ -85,7 +87,7 @@ public class Bullet extends BaseBullet {
             living =false;
     }
 
-    public void collidWith(Tank tank) {
+    public void collidWith(BaseTank tank) {
         if(this.group==tank.getGroup()) return;
 
         if(rectangleBullet.intersects(tank.rectangleTank)){
