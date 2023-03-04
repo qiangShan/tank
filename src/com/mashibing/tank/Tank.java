@@ -3,7 +3,7 @@ package com.mashibing.tank;
 import java.awt.*;
 import java.util.Random;
 
-public class Tank {
+public class Tank extends GameObject{
     private int x,y;
     private Dir dir=Dir.DOWN;
     private static final int SPEED=3;
@@ -69,9 +69,10 @@ public class Tank {
         this.y = y;
     }
 
+    @Override
     public void paint(Graphics graphics){
         if(!living)
-            gm.tanks.remove(this);
+            gm.remove(this);
         switch (dir){
             case LEFT:
                 graphics.drawImage( this.group==Group.GOOD? ResourceMgr.goodTankL:ResourceMgr.badTankL,x,y,null);
@@ -138,7 +139,7 @@ public class Tank {
     public void fire() {
         int bX=this.x+Tank.WIDTH/2-Bullet.WIDTH/2;
         int bY=this.y+Tank.HEIGHT/2-Bullet.HEIGHT/2;
-        gm.bullets.add(new Bullet(bX,bY,this.dir,this.group,this.gm));
+        gm.add(new Bullet(bX,bY,this.dir,this.group,this.gm));
     }
 
     public void die() {
