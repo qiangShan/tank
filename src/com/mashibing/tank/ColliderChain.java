@@ -16,9 +16,12 @@ public class ColliderChain implements Collider{
         colliderList.add(collider);
     }
 
-    public void collide(GameObject o1, GameObject o2) {
+    public boolean collide(GameObject o1, GameObject o2) {
         for(int i=0;i<colliderList.size();i++){
-            colliderList.get(i).collide(o1,o2);
+            if(!colliderList.get(i).collide(o1,o2)){
+                return false;
+            }
         }
+        return true;
     }
 }
