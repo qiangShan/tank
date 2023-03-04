@@ -15,7 +15,7 @@ public class Tank extends GameObject{
     private Group group=Group.BAD;
     Rectangle rectangleTank =new Rectangle();
     GameModel gm;
-    //int oldX,oldY;
+    //private int oldX,oldY;
 
     public Rectangle getRectangleTank() {
         return rectangleTank;
@@ -44,6 +44,8 @@ public class Tank extends GameObject{
     public Tank(int x, int y, Dir dir, Group group, GameModel gm) {
         this.x = x;
         this.y = y;
+        //this.oldX=x;
+        //this.oldY=y;
         this.dir = dir;
         this.group=group;
         this.gm=gm;
@@ -103,8 +105,8 @@ public class Tank extends GameObject{
 
     private void move() {
 
-        //oldX=this.x;
-        //oldY=this.y;
+        //this.oldX=x;
+        //this.oldY=y;
 
         if(!moving) return;
 
@@ -161,8 +163,7 @@ public class Tank extends GameObject{
     }
 
     public void stop(){
-        moving=false;
-        //this.x=oldX;
-        //this.y=oldY;
+       //x=oldX;
+       //y=oldY;
     }
 }
