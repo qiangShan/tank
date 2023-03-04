@@ -11,6 +11,7 @@ public class GameModel {
    // java.util.List<Tank> tanks=new ArrayList<Tank>();
    // List<Explode> explodes=new ArrayList<Explode>();
     private List<GameObject> objects=new ArrayList<>();
+    Collider collider=new BulletTankCollider();
 
     public GameModel(){
         //初始化敌方坦克
@@ -39,11 +40,22 @@ public class GameModel {
             objects.get(i).paint(graphics);
         }
 
-        //for(int i=0;i<bullets.size();i++){
-        //    for(int j=0;j<tanks.size();j++){
-         //       bullets.get(i).collidWith(tanks.get(j));
-        //    }
-        //}
+        //互相碰撞
+        for(int i=0; i<objects.size(); i++){
+            for (int j=i+1; j<objects.size(); j++){  //comparator.compare(o1,o2)
+                GameObject o1 = objects.get(i);
+                GameObject o2=objects.get(j);
+                collider.collide(o1,o2);
+            }
+        }
+
+        /**
+        for(int i=0;i<bullets.size();i++){
+            for(int j=0;j<tanks.size();j++){
+                bullets.get(i).collidWith(tanks.get(j));
+            }
+        }
+         */
     }
 
     public Tank getMainTank(){
