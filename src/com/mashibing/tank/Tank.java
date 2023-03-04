@@ -15,6 +15,15 @@ public class Tank extends GameObject{
     private Group group=Group.BAD;
     Rectangle rectangleTank =new Rectangle();
     GameModel gm;
+    //int oldX,oldY;
+
+    public Rectangle getRectangleTank() {
+        return rectangleTank;
+    }
+
+    public void setRectangleTank(Rectangle rectangleTank) {
+        this.rectangleTank = rectangleTank;
+    }
 
     public boolean isMoving() {
         return moving;
@@ -144,5 +153,9 @@ public class Tank extends GameObject{
 
     public void die() {
         this.living=false;
+    }
+
+    public void stop(){
+        moving=false;
     }
 }
