@@ -102,6 +102,10 @@ public class Tank extends GameObject{
     }
 
     private void move() {
+
+        //oldX=x;
+        //oldY=y;
+
         if(!moving) return;
 
         switch (dir) {
@@ -131,6 +135,8 @@ public class Tank extends GameObject{
         //update rect
         rectangleTank.x=this.x;
         rectangleTank.y=this.y;
+
+
 
     }
 
