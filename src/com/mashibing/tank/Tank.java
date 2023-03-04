@@ -103,8 +103,8 @@ public class Tank extends GameObject{
 
     private void move() {
 
-        //oldX=x;
-        //oldY=y;
+        //oldX=this.x;
+        //oldY=this.y;
 
         if(!moving) return;
 
@@ -132,11 +132,10 @@ public class Tank extends GameObject{
             randomDir();
         //间距碰撞
         boundsCheck();
+
         //update rect
         rectangleTank.x=this.x;
         rectangleTank.y=this.y;
-
-
 
     }
 
@@ -163,5 +162,7 @@ public class Tank extends GameObject{
 
     public void stop(){
         moving=false;
+        //this.x=oldX;
+        //this.y=oldY;
     }
 }
